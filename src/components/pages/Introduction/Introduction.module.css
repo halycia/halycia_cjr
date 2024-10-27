@@ -1,0 +1,246 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.gridContainer {
+    display: grid;
+    height: 95vh;
+    width: 95vw;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    grid-template-rows: 1fr 4fr 2.5fr;
+    grid-template-areas:
+        "item1 item1 item1"
+        "item2 item3 item4"
+        "item5 item6 item4";
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.gridContainer>div {
+    min-height: 6rem;
+    width: 100%;
+    border-radius: 1.25rem;
+}
+
+.item1 {
+    grid-area: item1;
+    background-color: var(--primary);
+}
+
+.nameText {
+    font-family: var(--fontFamily);
+    font-weight: 300;
+    height: 100%;
+    margin: auto;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item2 {
+    grid-area: item2;
+    background-color: var(--primary);
+    font-family: var(--fontFamily);
+    display: flexbox;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.divImgFlowerVector {
+    display: flex;
+    flex-direction: row-reverse;
+    max-height: 35%;
+    max-width: auto;
+}
+
+.imgFlowerVector {
+    padding: 20px;
+    max-width: 5rem;
+    animation: rotate 10s linear infinite;
+}
+
+.divProfession {
+    display: flex;
+    justify-items: flex-end;
+    overflow: hidden;
+    max-width: 80%;
+    max-height: 65%;
+}
+
+.profession {
+    font-weight: 550;
+    font-size: 290%;
+    /*max-width: 80%;*/
+    max-height: 70%;
+    padding-left: 20px;
+    align-self: flex-end;
+}
+
+.item3 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    grid-area: item3;
+    background-color: var(--primary);
+}
+
+.imgHaly {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item4 {
+    grid-area: item4;
+    background-color: var(--primary);
+    font-family: var(--fontFamily);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/**/
+
+.item5 {
+    grid-area: item5;
+    background-color: var(--primary);
+    font-family: var(--fontFamily);
+    display: flexbox;
+    flex-direction: column;
+}
+
+.imgCircleVector {
+    padding: 20px 20px 0px 20px;
+    min-height: 1rem;
+    min-width: auto;
+    max-width: 3rem;
+    max-height: auto;
+}
+
+.textAbout {
+    text-transform: uppercase;
+    text-size-adjust: auto;
+    font-weight: 100;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 80%;
+}
+
+.item6 {
+    background-color: var(--secondary);
+    grid-area: item6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fontFamily);
+}
+
+.pergunta {
+    font-family: var(--fontFamily);
+    padding-top: 3%;
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.icon {
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:disabled {
+    pointer-events: none;
+}
+
+.icon:hover {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    transform: translateY(-2px);
+    color: aqua;
+}
+
+.icon:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 2fr 3fr 2.5fr 1fr 0.75fr;
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6";
+        height: fit-content;
+        width: 95vw;
+
+        .item1 {
+            grid-area: item1;
+            display: flex;
+            font-size: small;
+        }
+
+        .nameText {
+            font-family: var(--fontFamily);
+            font-weight: 300;
+            height: 100%;
+            margin: auto;
+            padding-left: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0rem;
+        }
+        
+        .item4 {
+            grid-area: item4;
+            justify-content: center;
+        }
+
+        .divImgFlowerVector {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .divProfession {
+            display: flex;
+            justify-items: flex-end;
+            overflow: hidden;
+            max-width: 100%;
+            max-height: 65%;
+        }
+
+        .profession {
+            font-weight: 550;
+            font-size: 290%;
+            max-height: 70%;
+            padding: 10px;
+            align-self: flex-end;
+            text-wrap: pretty;
+        }
+
+    }
+}
